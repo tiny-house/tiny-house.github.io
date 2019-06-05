@@ -1,9 +1,9 @@
 ---
-title: Interessante Links
+title: Links
 subtitle: Noch mehr nützliche Informationen
 layout: "page"
 icon: fa-link
-order: 4
+order: 5
 ---
 
 # Tiny House Inspirationen
