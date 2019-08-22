@@ -1,5 +1,7 @@
 # Tiny House Bau
 
+Wer gerne Zugriff auf das Repository haben möchte soll sich bei Tim melden.
+
 
 # Prologue - Jekyll Theme
 
