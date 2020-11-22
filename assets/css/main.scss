@@ -1,4 +1,118 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
 ---
-@import "jekyll-theme-prologue";
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+@import 'font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900');
+
+/*
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+	@include skel-breakpoints((
+		xlarge: '(max-width: 1680px)',
+		large: '(max-width: 1280px)',
+		medium: '(max-width: 980px)',
+		small: '(max-width: 736px)',
+		xsmall: '(max-width: 480px)',
+		xxsmall: '(max-width: 360px)'
+	));
+
+	@include skel-layout((
+		reset: 'full',
+		boxModel: 'border',
+		grid: (
+			gutters: 2em
+		),
+		breakpoints: (
+			medium: (
+				grid: (
+					gutters: 1.5em
+				)
+			),
+			small: (
+				grid: (
+					gutters: 1em
+				)
+			)
+		)
+	));
+
+// Base.
+
+	@import 'base/page';
+	@import 'base/typography';
+
+// Component.
+
+	@import 'components/section';
+	@import 'components/icon';
+	@import 'components/list';
+	@import 'components/form';
+	@import 'components/box';
+	@import 'components/image';
+	@import 'components/table';
+	@import 'components/button';
+	@import 'components/tiles';
+
+// Layout.
+
+	@import 'layout/header';
+	@import 'layout/menu';
+	@import 'layout/main';
+	@import 'layout/footer';
+	@import 'layout/wrapper';
+
+.item {
+padding-top:100px;
+min-height:150px;
+position:relative
+}
+.item:before,.last-item:after {
+background:#fff;
+border:8px solid #000;
+border-radius:50%;
+width:40px;
+height:40px;
+display:inline-block;
+content:"";
+margin-left:1rem;
+position:relative;
+z-index:1;
+left:calc(2% - 36px)
+}
+.vertical-line {
+width:8px;
+background-color:#000;
+position:absolute;
+left:calc(2% - 5px);
+top:0;
+bottom:0
+}
+.item .card-panel {
+margin:0;
+margin:2rem 0 0 3rem
+}
+.item-date {
+margin-top:-60px;
+margin-left:4rem
+}
+.cv-title {
+margin-bottom:0;
+margin-left:calc(2% - 5px);
+line-height:190%
+}
+.cv-title span {
+padding:1rem
+}
+.last-item{
+padding-top:80px;
+height:70px;
+position:relative
+}

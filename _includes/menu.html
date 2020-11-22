@@ -1,0 +1,36 @@
+<nav id="menu">
+	<h2>Menu</h2>
+	<ul>
+
+		{% for page in site.pages %}
+		{% if page.path == "index.html" %}
+		<li><a href="{{ page.url | prepend: site.baseurl | remove: "index.html" }}">{{ page.title }}</a></li>
+		{% endif %} {% endfor %}
+
+		{% for page in site.pages %}
+
+			{% if page.title %}
+			    {% unless page.subpage_of or page.title == "Home" or page.title == "Impressum" or page.title == "Datenschutz" %}
+	                <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title | remove: "Home" }}</a>
+					{% for pg in site.pages %}
+	                    {% if pg.subpage_of == page.title%}
+	                        {% assign has_subpages = true %}
+	                    {% endif %}
+                    {% endfor %}
+                    {% if has_subpages %}
+	                    <ul>
+	                {% endif %}
+	                {% for pg in site.pages %}
+	                    {% if pg.subpage_of == page.title%}
+                            <li><a href="{{ pg.url | prepend: site.baseurl }}">{{ pg.title | remove: "Home"}}</a></li>
+	                    {% endif %}
+	                {% endfor %}
+	                {% if has_subpages %}
+	                    </ul>
+	                {% endif %}
+	            </li>
+	            {% endunless %} 
+            {% endif %}
+        {% endfor %}
+	</ul>
+</nav>
