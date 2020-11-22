@@ -2,5 +2,4 @@
 .sass-cache
 _site/
 .jekyll-cache
-.gitlab-ci
 Gemfile.lock
